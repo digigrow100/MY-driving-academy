@@ -72,7 +72,7 @@ export default function Navbar() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         className={`relative flex items-center justify-between px-4 md:px-10 max-w-[1200px] mx-auto transition-[padding] duration-300 ${
-          scrolled ? "py-2" : "py-3 md:py-4"
+          scrolled ? "py-2 md:min-h-12" : "py-3 md:py-4 md:min-h-16"
         }`}
       >
         <nav aria-label="Primary" className="hidden md:flex gap-8 items-center">
