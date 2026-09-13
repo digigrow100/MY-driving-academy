@@ -16,6 +16,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import { useIsomorphicLayoutEffect } from "@/hooks/useIsomorphicLayoutEffect";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import MagneticLink from "./MagneticLink";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -111,7 +113,7 @@ export default function CTA() {
           Get in touch and one of our friendly instructors will help you find
           the right course to get you on the road with confidence.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-14">
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-14">
           <MagneticLink
             href="mailto:hello@mydrivingacademy.com"
             className="cta-action inline-flex items-center justify-center bg-secondary-container text-on-secondary-fixed-variant font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors duration-200 shadow-lg w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-container focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
@@ -120,11 +122,20 @@ export default function CTA() {
             <CalendarCheck className="w-4 h-4 ml-2" aria-hidden="true" />
           </MagneticLink>
           <MagneticLink
-            href="tel:+448001234567"
+            href={PHONE_TEL}
             className="cta-action inline-flex items-center justify-center border-2 border-on-primary/40 text-on-primary font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary/10 hover:border-on-primary transition-colors w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-primary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
           >
             <Phone className="w-4 h-4 mr-2 animate-float" style={{ ["--float-rotate" as string]: "0deg" }} aria-hidden="true" />
-            0800 123 4567
+            {PHONE_DISPLAY}
+          </MagneticLink>
+          <MagneticLink
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-action inline-flex items-center justify-center border-2 border-on-primary/40 text-on-primary font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary/10 hover:border-on-primary transition-colors w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-primary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+          >
+            <WhatsAppIcon className="w-4 h-4 mr-2" />
+            WhatsApp Us
           </MagneticLink>
         </div>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 pt-8 border-t border-on-primary/15">

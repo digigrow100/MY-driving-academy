@@ -7,11 +7,19 @@ type Props = {
   href: string;
   className?: string;
   children: ReactNode;
+  target?: string;
+  rel?: string;
 };
 
 /** A link with a subtle magnetic pull toward the cursor on desktop. Touch
  * devices get a plain, fully-clickable link with no offset. */
-export default function MagneticLink({ href, className = "", children }: Props) {
+export default function MagneticLink({
+  href,
+  className = "",
+  children,
+  target,
+  rel,
+}: Props) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -34,6 +42,8 @@ export default function MagneticLink({ href, className = "", children }: Props) 
     <motion.a
       ref={ref}
       href={href}
+      target={target}
+      rel={rel}
       onPointerMove={handlePointerMove}
       onPointerLeave={reset}
       style={{ x: springX, y: springY }}

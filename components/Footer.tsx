@@ -2,8 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import { legalNav, mainNav, services } from "@/lib/nav";
+import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 import Reveal from "@/components/Reveal";
 import BackToTop from "@/components/BackToTop";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const linkClasses =
   "relative w-fit text-sm text-on-primary-container/75 transition-colors duration-200 hover:text-secondary-fixed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-fixed rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-secondary-fixed after:transition-all after:duration-300 hover:after:w-full";
@@ -41,11 +43,20 @@ export default function Footer() {
                 hello@mydrivingacademy.com
               </a>
               <a
-                href="tel:+448001234567"
+                href={PHONE_TEL}
                 className={`flex items-center gap-2 ${linkClasses}`}
               >
                 <Phone className="w-[18px] h-[18px]" aria-hidden="true" />
-                0800 123 4567
+                {PHONE_DISPLAY}
+              </a>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-2 ${linkClasses}`}
+              >
+                <WhatsAppIcon className="w-[18px] h-[18px]" />
+                WhatsApp us
               </a>
             </div>
           </div>
