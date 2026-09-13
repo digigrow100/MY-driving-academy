@@ -160,14 +160,8 @@ export default function ServicePage({
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
             <a
-              href="mailto:hello@mydrivingacademy.com"
-              className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors shadow-sm"
-            >
-              Contact Instructor
-            </a>
-            <a
               href={PHONE_TEL}
-              className="inline-flex items-center justify-center border-2 border-on-primary-container/40 text-on-primary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary-container/10 hover:border-on-primary-container transition-colors"
+              className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors shadow-sm"
             >
               Call {PHONE_DISPLAY}
             </a>

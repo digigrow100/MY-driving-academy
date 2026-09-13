@@ -4,11 +4,11 @@ import { useRef } from "react";
 import Image from "next/image";
 import {
   Award,
-  CalendarCheck,
   CarFront,
   Clock,
   Phone,
   ShieldCheck,
+  Trophy,
   type LucideIcon,
 } from "lucide-react";
 import gsap from "gsap";
@@ -24,6 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const trustBadges: { icon: LucideIcon; label: string }[] = [
   { icon: ShieldCheck, label: "DVSA-Qualified" },
+  { icon: Trophy, label: "10+ Years Experience" },
   { icon: Award, label: "98% Pass Rate" },
   { icon: CarFront, label: "Dual-Control Cars" },
   { icon: Clock, label: "7 Days a Week" },
@@ -115,15 +116,8 @@ export default function CTA() {
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-14">
           <MagneticLink
-            href="mailto:hello@mydrivingacademy.com"
-            className="cta-action inline-flex items-center justify-center bg-secondary-container text-on-secondary-fixed-variant font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors duration-200 shadow-lg w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-container focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
-          >
-            Book Your First Lesson
-            <CalendarCheck className="w-4 h-4 ml-2" aria-hidden="true" />
-          </MagneticLink>
-          <MagneticLink
             href={PHONE_TEL}
-            className="cta-action inline-flex items-center justify-center border-2 border-on-primary/40 text-on-primary font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary/10 hover:border-on-primary transition-colors w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-on-primary focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
+            className="cta-action inline-flex items-center justify-center bg-secondary-container text-on-secondary-fixed-variant font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors duration-200 shadow-lg w-full sm:w-auto focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-container focus-visible:ring-offset-2 focus-visible:ring-offset-primary"
           >
             <Phone className="w-4 h-4 mr-2 animate-float" style={{ ["--float-rotate" as string]: "0deg" }} aria-hidden="true" />
             {PHONE_DISPLAY}

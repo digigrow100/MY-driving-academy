@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Star, Trophy } from "lucide-react";
+import { ChevronDown, Trophy } from "lucide-react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
@@ -65,11 +65,6 @@ export default function Hero() {
           ".hero-cta",
           { opacity: 0, y: 20, duration: 0.6, stagger: 0.1 },
           "-=0.4",
-        )
-        .from(
-          ".hero-review",
-          { opacity: 0, y: 16, duration: 0.5 },
-          "-=0.3",
         );
 
       if (imageWrap) {
@@ -174,17 +169,6 @@ export default function Hero() {
               >
                 Explore Services
               </Link>
-            </div>
-            <div className="hero-review flex items-center justify-center lg:justify-start gap-2">
-              <div className="flex text-secondary-container" aria-hidden="true">
-                {Array.from({ length: 5 }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
-              </div>
-              <p className="text-sm text-on-primary/80">
-                <span className="font-semibold text-on-primary">4.9/5</span>{" "}
-                from 500+ students trained
-              </p>
             </div>
           </div>
 
