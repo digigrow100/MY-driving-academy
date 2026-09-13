@@ -40,6 +40,25 @@ export default function Navbar() {
   // reads as a bug, not a feature.
   const isActive = (href: string) => !href.includes("#") && href === pathname;
 
+  // Desktop: the logo sits centered, flanked by the nav split into two
+  // even halves either side of it. Mobile keeps the simple logo-left,
+  // hamburger-right row (the split halves are hidden, not reflowed -
+  // the full list still appears together in the slide-down menu below).
+  const half = Math.ceil(mainNav.length / 2);
+  const leftNav = mainNav.slice(0, half);
+  const rightNav = mainNav.slice(half);
+
+  const navLinkClasses = (href: string) =>
+    `relative text-sm font-medium py-1 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:ease-out ${
+      transparent
+        ? "text-on-primary after:bg-secondary-container"
+        : "text-on-surface-variant hover:text-primary after:bg-secondary"
+    } ${
+      isActive(href)
+        ? `${transparent ? "text-on-primary" : "text-primary"} after:w-full`
+        : "after:w-0 hover:after:w-full"
+    }`;
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-[background-color,box-shadow,backdrop-filter] duration-300 ${
@@ -52,10 +71,36 @@ export default function Navbar() {
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-        className={`flex justify-between items-center px-4 md:px-10 max-w-[1200px] mx-auto transition-[padding] duration-300 ${
+        className={`flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:gap-6 px-4 md:px-10 max-w-[1200px] mx-auto transition-[padding] duration-300 ${
           scrolled ? "py-2" : "py-3 md:py-4"
         }`}
       >
+        <nav
+          aria-label="Primary"
+          className="hidden md:flex gap-8 items-center justify-end"
+        >
+          {leftNav.map((item, i) => (
+            <motion.div
+              key={item.href}
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.5,
+                delay: 0.15 + i * 0.06,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+            >
+              <Link
+                href={item.href}
+                aria-current={isActive(item.href) ? "page" : undefined}
+                className={navLinkClasses(item.href)}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
+          ))}
+        </nav>
+
         <Link
           href="/"
           className="flex items-center hover:opacity-85 transition-opacity"
@@ -72,57 +117,47 @@ export default function Navbar() {
           />
         </Link>
 
-        <nav
-          aria-label="Main Navigation"
-          className="hidden md:flex gap-8 items-center"
-        >
-          {mainNav.map((item, i) => (
-            <motion.div
-              key={item.href}
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.5,
-                delay: 0.15 + i * 0.06,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-            >
-              <Link
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={`relative text-sm font-medium py-1 transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:rounded-full after:transition-all after:duration-300 after:ease-out ${
-                  transparent
-                    ? "text-on-primary after:bg-secondary-container"
-                    : "text-on-surface-variant hover:text-primary after:bg-secondary"
-                } ${
-                  isActive(item.href)
-                    ? `${transparent ? "text-on-primary" : "text-primary"} after:w-full`
-                    : "after:w-0 hover:after:w-full"
-                }`}
+        <div className="hidden md:flex items-center justify-start gap-8">
+          <nav aria-label="Secondary" className="flex gap-8 items-center">
+            {rightNav.map((item, i) => (
+              <motion.div
+                key={item.href}
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.15 + (leftNav.length + i) * 0.06,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
-                {item.label}
-              </Link>
-            </motion.div>
-          ))}
-        </nav>
+                <Link
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  className={navLinkClasses(item.href)}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
+            ))}
+          </nav>
 
-        <motion.div
-          initial={{ opacity: 0, y: -8 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="hidden md:block"
-        >
-          <Link
-            href="#contact"
-            className={`inline-flex items-center font-semibold text-sm px-6 py-2.5 rounded-lg shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 ${
-              transparent
-                ? "bg-secondary-container text-on-secondary-fixed-variant hover:bg-secondary-fixed-dim focus-visible:ring-offset-transparent"
-                : "bg-primary-container text-on-primary hover:bg-primary focus-visible:ring-offset-surface"
-            }`}
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           >
-            Book Lessons
-          </Link>
-        </motion.div>
+            <Link
+              href="#contact"
+              className={`inline-flex items-center font-semibold text-sm px-6 py-2.5 rounded-lg shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 ${
+                transparent
+                  ? "bg-secondary-container text-on-secondary-fixed-variant hover:bg-secondary-fixed-dim focus-visible:ring-offset-transparent"
+                  : "bg-primary-container text-on-primary hover:bg-primary focus-visible:ring-offset-surface"
+              }`}
+            >
+              Book Lessons
+            </Link>
+          </motion.div>
+        </div>
 
         <button
           aria-label={open ? "Close menu" : "Open menu"}
