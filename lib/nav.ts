@@ -1,7 +1,7 @@
 export const mainNav = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/#about" },
   { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "#contact" },
 ];
 
