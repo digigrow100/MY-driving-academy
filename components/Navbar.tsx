@@ -5,11 +5,12 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X } from "lucide-react";
-import { mainNav } from "@/lib/nav";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { mainNav, services } from "@/lib/nav";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -31,6 +32,14 @@ export default function Navbar() {
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  const toggleMobileMenu = () => {
+    setOpen((v) => {
+      const next = !v;
+      if (!next) setMobileServicesOpen(false);
+      return next;
+    });
+  };
 
   // Only mark a nav item "current" when its href is a real route matching
   // the page we're on. Same-page anchor links (About/Services/Contact all
@@ -58,6 +67,60 @@ export default function Navbar() {
         ? `${transparent ? "text-on-primary" : "text-primary"} after:w-full`
         : "after:w-0 hover:after:w-full"
     }`;
+
+  const isOnServicePage = services.some((s) => pathname === `/${s.slug}`);
+
+  const renderDesktopItem = (item: (typeof mainNav)[number]) => {
+    if (item.label !== "Services") {
+      return (
+        <Link
+          href={item.href}
+          aria-current={isActive(item.href) ? "page" : undefined}
+          className={navLinkClasses(item.href)}
+        >
+          {item.label}
+        </Link>
+      );
+    }
+
+    return (
+      <div className="relative group py-1 -my-1">
+        <Link
+          href={item.href}
+          aria-current={isOnServicePage ? "page" : undefined}
+          className={`inline-flex items-center gap-1 ${navLinkClasses(item.href)} ${
+            isOnServicePage
+              ? `${transparent ? "text-on-primary" : "text-primary"} after:w-full`
+              : ""
+          }`}
+        >
+          {item.label}
+          <ChevronDown
+            className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180 group-focus-within:rotate-180"
+            aria-hidden="true"
+          />
+        </Link>
+        <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-64 opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 transition-all duration-200">
+          <div className="bg-surface rounded-xl shadow-xl border border-outline-variant/30 py-2 overflow-hidden">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/${service.slug}`}
+                aria-current={pathname === `/${service.slug}` ? "page" : undefined}
+                className={`block px-4 py-2.5 text-sm transition-colors ${
+                  pathname === `/${service.slug}`
+                    ? "text-primary bg-surface-container"
+                    : "text-on-surface-variant hover:bg-surface-container hover:text-primary"
+                }`}
+              >
+                {service.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <header
@@ -87,13 +150,7 @@ export default function Navbar() {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <Link
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={navLinkClasses(item.href)}
-              >
-                {item.label}
-              </Link>
+              {renderDesktopItem(item)}
             </motion.div>
           ))}
         </nav>
@@ -126,13 +183,7 @@ export default function Navbar() {
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              <Link
-                href={item.href}
-                aria-current={isActive(item.href) ? "page" : undefined}
-                className={navLinkClasses(item.href)}
-              >
-                {item.label}
-              </Link>
+              {renderDesktopItem(item)}
             </motion.div>
           ))}
         </nav>
@@ -141,7 +192,7 @@ export default function Navbar() {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
+          onClick={toggleMobileMenu}
           className={`md:hidden p-2 -mr-2 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
             transparent ? "text-on-primary" : "text-primary"
           }`}
@@ -166,21 +217,95 @@ export default function Navbar() {
             className="md:hidden bg-surface border-t border-outline-variant/30 overflow-hidden"
           >
             <div className="px-4 py-4 flex flex-col gap-1">
-              {mainNav.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setOpen(false)}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  className={`font-medium py-3 px-3 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
-                    isActive(item.href)
-                      ? "bg-surface-container text-primary"
-                      : "text-on-surface-variant hover:bg-surface-container hover:text-secondary"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {mainNav.map((item) => {
+                if (item.label !== "Services") {
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      aria-current={isActive(item.href) ? "page" : undefined}
+                      className={`font-medium py-3 px-3 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
+                        isActive(item.href)
+                          ? "bg-surface-container text-primary"
+                          : "text-on-surface-variant hover:bg-surface-container hover:text-secondary"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div key={item.href}>
+                    <div
+                      className={`flex items-center rounded-lg transition-colors ${
+                        isOnServicePage
+                          ? "bg-surface-container text-primary"
+                          : "text-on-surface-variant"
+                      }`}
+                    >
+                      <Link
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                        aria-current={isOnServicePage ? "page" : undefined}
+                        className="flex-1 font-medium py-3 px-3 rounded-lg hover:bg-surface-container hover:text-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                      >
+                        {item.label}
+                      </Link>
+                      <button
+                        type="button"
+                        aria-expanded={mobileServicesOpen}
+                        aria-controls="mobile-services-submenu"
+                        aria-label={
+                          mobileServicesOpen ? "Collapse services list" : "Expand services list"
+                        }
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                        className="p-3 rounded-lg hover:bg-surface-container hover:text-secondary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary"
+                      >
+                        <ChevronDown
+                          className={`w-4 h-4 transition-transform duration-200 ${
+                            mobileServicesOpen ? "rotate-180" : ""
+                          }`}
+                          aria-hidden="true"
+                        />
+                      </button>
+                    </div>
+                    <AnimatePresence>
+                      {mobileServicesOpen && (
+                        <motion.div
+                          id="mobile-services-submenu"
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pl-4 py-1 flex flex-col gap-0.5">
+                            {services.map((service) => (
+                              <Link
+                                key={service.slug}
+                                href={`/${service.slug}`}
+                                onClick={() => setOpen(false)}
+                                aria-current={
+                                  pathname === `/${service.slug}` ? "page" : undefined
+                                }
+                                className={`text-sm py-2.5 px-3 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary ${
+                                  pathname === `/${service.slug}`
+                                    ? "text-primary bg-surface-container"
+                                    : "text-on-surface-variant hover:bg-surface-container hover:text-secondary"
+                                }`}
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              })}
             </div>
           </motion.nav>
         )}
