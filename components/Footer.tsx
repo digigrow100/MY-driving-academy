@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
 import { legalNav, mainNav, services } from "@/lib/nav";
 import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
 import Reveal from "@/components/Reveal";
@@ -35,13 +35,6 @@ export default function Footer() {
               generation of safe drivers.
             </p>
             <div className="mt-5 space-y-2">
-              <a
-                href="mailto:hello@mydrivingacademy.com"
-                className={`flex items-center gap-2 ${linkClasses}`}
-              >
-                <Mail className="w-[18px] h-[18px]" aria-hidden="true" />
-                hello@mydrivingacademy.com
-              </a>
               <a
                 href={PHONE_TEL}
                 className={`flex items-center gap-2 ${linkClasses}`}
@@ -113,7 +106,7 @@ export default function Footer() {
             reserved.
           </p>
           <p className="text-xs text-on-primary-container/50">
-            DVSA-qualified instructors · Leicester, UK
+            10+ Years Experience · DVSA-Qualified Instructors · Leicester, UK
           </p>
         </div>
       </div>

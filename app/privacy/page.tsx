@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
+import { PHONE_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -16,7 +17,7 @@ export default function PrivacyPage() {
         {
           heading: "Information We Collect",
           body: [
-            "When you contact us or make a booking, we may collect your name, email address, phone number, and details relevant to scheduling lessons, such as your address or preferred pickup location.",
+            "When you contact us or make a booking, we may collect your name, phone number, and details relevant to scheduling lessons, such as your address or preferred pickup location.",
           ],
         },
         {
@@ -34,7 +35,7 @@ export default function PrivacyPage() {
         {
           heading: "Your Rights",
           body: [
-            "You can ask us at any time to access, correct, or delete the personal information we hold about you by emailing hello@mydrivingacademy.com.",
+            `You can ask us at any time to access, correct, or delete the personal information we hold about you by phone or WhatsApp on ${PHONE_DISPLAY}.`,
           ],
         },
         {
@@ -46,7 +47,7 @@ export default function PrivacyPage() {
         {
           heading: "Contact",
           body: [
-            "For any privacy-related questions, reach out to hello@mydrivingacademy.com.",
+            `For any privacy-related questions, reach out to us by phone or WhatsApp on ${PHONE_DISPLAY}.`,
           ],
         },
       ]}

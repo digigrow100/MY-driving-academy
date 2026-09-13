@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/LegalPage";
+import { PHONE_DISPLAY } from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -46,7 +47,7 @@ export default function TermsPage() {
         {
           heading: "Contact",
           body: [
-            "Questions about these terms can be sent to hello@mydrivingacademy.com.",
+            `Questions about these terms can be sent to us by phone or WhatsApp on ${PHONE_DISPLAY}.`,
           ],
         },
       ]}
