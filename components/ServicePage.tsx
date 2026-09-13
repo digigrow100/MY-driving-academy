@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import { PHONE_DISPLAY, PHONE_TEL, WHATSAPP_URL } from "@/lib/contact";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 export type Feature = {
   icon: string;
@@ -156,12 +158,29 @@ export default function ServicePage({
             Contact us today to book your first lesson and begin your journey
             to becoming a confident driver.
           </p>
-          <a
-            href="mailto:hello@mydrivingacademy.com"
-            className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors shadow-sm"
-          >
-            Contact Instructor
-          </a>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
+            <a
+              href="mailto:hello@mydrivingacademy.com"
+              className="inline-flex items-center justify-center bg-secondary-container text-on-secondary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors shadow-sm"
+            >
+              Contact Instructor
+            </a>
+            <a
+              href={PHONE_TEL}
+              className="inline-flex items-center justify-center border-2 border-on-primary-container/40 text-on-primary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary-container/10 hover:border-on-primary-container transition-colors"
+            >
+              Call {PHONE_DISPLAY}
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 border-2 border-on-primary-container/40 text-on-primary-container font-semibold text-sm px-8 py-4 rounded-lg hover:bg-on-primary-container/10 hover:border-on-primary-container transition-colors"
+            >
+              <WhatsAppIcon className="w-4 h-4" />
+              WhatsApp Us
+            </a>
+          </div>
         </div>
       </section>
     </>
