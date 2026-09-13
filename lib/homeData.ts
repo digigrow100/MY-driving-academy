@@ -96,4 +96,10 @@ export const galleryImages = [
     label: "Refresher Classes",
     wide: true,
   },
+  {
+    src: "/pass-day.webp",
+    alt: "A delighted student holding up his driving test pass certificate outside the test centre.",
+    label: "Pass Day",
+    wide: false,
+  },
 ];

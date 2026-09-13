@@ -161,8 +161,8 @@ export default function WhyChooseUs() {
               className="rounded-2xl overflow-hidden ambient-shadow h-[320px] sm:h-[420px] relative"
             >
               <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDG5giAMKkdorzjqPawVrA_KDCfGNpG1a2TB7FZ549-6ExoXY71L-mJycfPBY8cvH6FiOojGdU26VAQWSURyF9hkEC90Z19YMN5cJnJOJ8nA0C4lYT1LqFj6zf2T8fj_CmEWMHr14cxS9lMQi35EE0ybB8kG-goLh5YJ4NJg_p0mZI8dqJONAIm0TfItNg0YozTlptNlr9EJlrSdmUnd2_GdMpfqxv98tpDxgTU8AMTsgoE7jy6B53OvQ"
-                alt="A friendly driving instructor sitting in the passenger seat, encouraging a student driver."
+                src="/why-choose-us.webp"
+                alt="A friendly driving instructor smiling and waving from the driver's seat, ready to welcome a new student."
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"

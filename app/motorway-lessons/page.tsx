@@ -14,7 +14,7 @@ export default function MotorwayLessonsPage() {
       title="Motorway Lessons"
       description="Specialized tuition for high-speed roads tailored for newly passed drivers looking to gain confidence and ensure maximum safety on busy multi-lane networks."
       imageUrl="/motorway-lessons.webp"
-      imageAlt="A driver's-eye view of a car approaching a motorway slip road under a blue motorway sign."
+      imageAlt="A driver's-eye view of a car on the motorway approaching a junction with overhead direction signs."
       features={[
         {
           icon: "merge_type",

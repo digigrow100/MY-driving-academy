@@ -70,7 +70,7 @@ export const services: Service[] = [
     icon: "add_road",
     image: "/motorway-lessons.webp",
     imageAlt:
-      "A driver's-eye view of a car approaching a motorway slip road.",
+      "A driver's-eye view of a car on the motorway approaching a junction with overhead direction signs.",
     tagline: "Master high-speed driving",
     description:
       "Build confidence at high speeds with specialized instruction on motorway driving.",
