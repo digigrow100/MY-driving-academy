@@ -66,7 +66,7 @@ export default function CTA() {
     >
       <Image
         src="/motorway-lessons.webp"
-        alt="A driver's-eye view of a car approaching a motorway slip road."
+        alt="A driver's-eye view of a car on the motorway approaching a junction with overhead direction signs."
         fill
         sizes="100vw"
         className="object-cover"

@@ -14,7 +14,7 @@ export default function DrivingLessonsPage() {
       title="Driving Lessons"
       description="Standard weekly lessons tailored to your specific learning pace and comfort level. DVSA-qualified instructor builds a plan matching your learning style and confidence in a fully dual-controlled car across Leicester."
       imageUrl="/driving-lessons.webp"
-      imageAlt="A driving instructor smiling while a young student confidently drives, with the instructor holding a clipboard."
+      imageAlt="A driving instructor smiling and pointing ahead while a young student confidently drives."
       features={[
         {
           icon: "schedule",
