@@ -63,7 +63,7 @@ export default function Hero() {
           href="#contact"
           className="hero-cta bg-secondary-container text-on-secondary-fixed-variant font-semibold text-sm px-8 py-4 rounded-lg hover:bg-secondary-fixed-dim transition-colors duration-200 text-center shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-container focus-visible:ring-offset-2 focus-visible:ring-offset-primary-container"
         >
-          Start Your Journey
+          Book Your Class Now
         </Link>
       </div>
     </section>
