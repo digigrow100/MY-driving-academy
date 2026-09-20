@@ -56,7 +56,7 @@ export default function Hero() {
           ref={headlineRef}
           className="text-4xl sm:text-5xl lg:text-6xl font-bold text-on-primary mb-8 leading-tight"
         >
-          Learn to Drive with{" "}
+          Pass Your Driving Test with{" "}
           <span className="text-secondary-container">Confidence</span>
         </h1>
         <Link
