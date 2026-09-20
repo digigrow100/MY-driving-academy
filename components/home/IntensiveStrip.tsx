@@ -7,11 +7,11 @@ const courses = ["3 Days", "5 Days", "7 Days", "10 Days"];
 
 export default function IntensiveStrip() {
   return (
-    <div className="pt-8 border-t border-on-primary/15 text-center lg:text-left">
+    <div className="text-center">
       <p className="text-xs font-semibold text-on-primary/70 mb-4 uppercase tracking-wider">
         Fast-Track Intensive Courses Available
       </p>
-      <div className="flex flex-wrap justify-center lg:justify-start gap-3">
+      <div className="flex flex-wrap justify-center gap-3">
         {courses.map((course, i) => (
           <motion.div
             key={course}
