@@ -23,19 +23,19 @@ export default function TermsPage() {
         {
           heading: "Cancellations",
           body: [
-            "We ask for at least 48 hours' notice to cancel or reschedule a lesson. Lessons cancelled with less notice, or missed without notice, may be charged in full at the instructor's discretion.",
+            "We ask for at least 48 hours' notice to cancel or reschedule a lesson. Lessons cancelled with less notice, or missed without notice, may be charged in full at the trainer's discretion.",
           ],
         },
         {
-          heading: "Instructor Conduct",
+          heading: "Trainer Conduct",
           body: [
-            "All instructors are DVSA-qualified and undergo regular vehicle safety checks. Lessons take place in fully insured, dual-control vehicles. Students are expected to follow instructor guidance for the safety of all road users.",
+            "All trainers are DVSA-qualified and undergo regular vehicle safety checks. Lessons take place in fully insured, dual-control vehicles. Students are expected to follow trainer guidance for the safety of all road users.",
           ],
         },
         {
           heading: "Liability",
           body: [
-            "While every reasonable precaution is taken to ensure safety during lessons, driving inherently carries risk. MY Driving Academy maintains appropriate insurance cover for tuition vehicles and instructors.",
+            "While every reasonable precaution is taken to ensure safety during lessons, driving inherently carries risk. MY Driving Academy maintains appropriate insurance cover for tuition vehicles and trainers.",
           ],
         },
         {

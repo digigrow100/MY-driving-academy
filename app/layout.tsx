@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 const siteDescription =
-  "Premium driving tuition in Leicester. DVSA-qualified instructors, dual-control cars, and flexible lessons, intensive courses, block bookings, test prep, motorway lessons and refresher classes.";
+  "Premium driving tuition in Leicester. DVSA-qualified trainers, dual-control cars, and flexible lessons, intensive courses, block bookings, test prep, motorway lessons and refresher classes.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(

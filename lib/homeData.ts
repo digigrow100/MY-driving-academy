@@ -4,8 +4,8 @@
 export const whyUs = [
   {
     icon: "workspace_premium",
-    title: "DVSA-Qualified Instructors",
-    body: "Patient, expert instructors dedicated to your safety and success behind the wheel.",
+    title: "DVSA-Qualified Trainers",
+    body: "Patient, expert trainers dedicated to your safety and success behind the wheel.",
   },
   {
     icon: "spa",
@@ -25,7 +25,7 @@ export const whyUs = [
 ];
 
 export const stats = [
-  { value: "10+", suffix: "", label: "Years Experience" },
+  { value: "5+", suffix: "", label: "Years Experience" },
   { value: "500+", suffix: "", label: "Students Trained" },
   { value: "98%", suffix: "", label: "Pass Rate" },
   { value: "7", suffix: "", label: "Days a Week" },
@@ -39,8 +39,8 @@ export const journeySteps = [
   },
   {
     icon: "person",
-    title: "Meet Instructor",
-    body: "We pick you up for your first orientation drive.",
+    title: "Say Hello",
+    body: "We swing by and take you out for a relaxed first drive together.",
   },
   {
     icon: "directions_car",
@@ -62,7 +62,7 @@ export const journeySteps = [
 export const galleryImages = [
   {
     src: "/driving-lessons.webp",
-    alt: "A driving instructor smiling while a young student confidently drives.",
+    alt: "A driving trainer smiling while a young student confidently drives.",
     label: "Driving Lessons",
     wide: true,
   },
@@ -92,7 +92,7 @@ export const galleryImages = [
   },
   {
     src: "/refresher-classes.webp",
-    alt: "A mature adult student driving while a calm instructor chats with them.",
+    alt: "A mature adult student driving while a calm trainer chats with them.",
     label: "Refresher Classes",
     wide: true,
   },

@@ -33,7 +33,7 @@ export default function IntensiveCoursesPage() {
           icon: "verified_user",
           title: "Expert Instruction",
           description:
-            "Learn from a patient, DVSA-qualified instructor committed to your success.",
+            "Learn from a patient, DVSA-qualified trainer committed to your success.",
         },
         {
           icon: "fact_check",

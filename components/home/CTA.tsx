@@ -24,7 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const trustBadges: { icon: LucideIcon; label: string }[] = [
   { icon: ShieldCheck, label: "DVSA-Qualified" },
-  { icon: Trophy, label: "10+ Years Experience" },
+  { icon: Trophy, label: "5+ Years Experience" },
   { icon: Award, label: "98% Pass Rate" },
   { icon: CarFront, label: "Dual-Control Cars" },
   { icon: Clock, label: "7 Days a Week" },
@@ -111,7 +111,7 @@ export default function CTA() {
           Ready to Start Your Driving Journey?
         </h2>
         <p className="cta-copy text-lg text-on-primary/85 mb-10 max-w-xl mx-auto">
-          Get in touch and one of our friendly instructors will help you find
+          Get in touch and one of our friendly trainers will help you find
           the right course to get you on the road with confidence.
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center items-center mb-14">

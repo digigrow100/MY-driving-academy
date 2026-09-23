@@ -86,7 +86,7 @@ export default function Gallery() {
             Life at MY Driving Academy
           </h2>
           <p className="text-on-surface-variant">
-            A look at our students, instructors, and vehicles out on the
+            A look at our students, trainers, and vehicles out on the
             road.
           </p>
         </div>

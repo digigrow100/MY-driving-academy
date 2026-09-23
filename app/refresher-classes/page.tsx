@@ -14,7 +14,7 @@ export default function RefresherClassesPage() {
       title="Refresher Classes"
       description="Targeted sessions for drivers getting back on the road after a break. Patient, judgment-free instruction tailored to rebuild your confidence at your own pace."
       imageUrl="/refresher-classes.webp"
-      imageAlt="A mature adult student driving while a calm instructor chats with them in the passenger seat."
+      imageAlt="A mature adult student driving while a calm trainer chats with them in the passenger seat."
       includedSubtitle="Our refresher courses are designed to address your specific needs, focusing on the areas where you want to regain confidence."
       features={[
         {
@@ -45,7 +45,7 @@ export default function RefresherClassesPage() {
         },
         {
           icon: "handshake",
-          title: "5. Patient Instructor",
+          title: "5. Patient Trainer",
           description:
             "Learn with highly trained professionals who specialize in nervous or returning drivers, providing a completely judgment-free environment.",
         },

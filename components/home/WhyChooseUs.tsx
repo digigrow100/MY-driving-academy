@@ -162,7 +162,7 @@ export default function WhyChooseUs() {
             >
               <Image
                 src="/why-choose-us.webp"
-                alt="A friendly driving instructor smiling and waving from the driver's seat, ready to welcome a new student."
+                alt="A friendly driving trainer smiling and waving from the driver's seat, ready to welcome a new student."
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover"
