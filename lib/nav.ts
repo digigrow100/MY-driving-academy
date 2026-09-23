@@ -27,7 +27,7 @@ export const services: Service[] = [
     icon: "swipe_left_alt",
     image: "/driving-lessons.webp",
     imageAlt:
-      "A driving instructor smiling while a young student confidently drives.",
+      "A driving trainer smiling while a young student confidently drives.",
     tagline: "Learn at your own pace",
     description:
       "Standard 1 or 2-hour lessons tailored to your pace, perfect for steady progression.",
@@ -81,7 +81,7 @@ export const services: Service[] = [
     icon: "autorenew",
     image: "/refresher-classes.webp",
     imageAlt:
-      "A mature adult student driving while a calm instructor chats with them.",
+      "A mature adult student driving while a calm trainer chats with them.",
     tagline: "Get back behind the wheel safely",
     description:
       "Been a while since you drove? Brush up on your skills and regain your confidence on the road.",

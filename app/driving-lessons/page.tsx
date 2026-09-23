@@ -4,7 +4,7 @@ import ServicePage from "@/components/ServicePage";
 export const metadata: Metadata = {
   title: "Driving Lessons",
   description:
-    "Standard weekly driving lessons tailored to your pace with a DVSA-qualified instructor in a fully dual-controlled car across Leicester.",
+    "Standard weekly driving lessons tailored to your pace with a DVSA-qualified trainer in a fully dual-controlled car across Leicester.",
 };
 
 export default function DrivingLessonsPage() {
@@ -12,9 +12,9 @@ export default function DrivingLessonsPage() {
     <ServicePage
       eyebrow="Learn at your own pace"
       title="Driving Lessons"
-      description="Standard weekly lessons tailored to your specific learning pace and comfort level. DVSA-qualified instructor builds a plan matching your learning style and confidence in a fully dual-controlled car across Leicester."
+      description="Standard weekly lessons tailored to your specific learning pace and comfort level. DVSA-qualified trainer builds a plan matching your learning style and confidence in a fully dual-controlled car across Leicester."
       imageUrl="/driving-lessons.webp"
-      imageAlt="A driving instructor smiling and pointing ahead while a young student confidently drives."
+      imageAlt="A driving trainer smiling and pointing ahead while a young student confidently drives."
       features={[
         {
           icon: "schedule",
@@ -25,8 +25,8 @@ export default function DrivingLessonsPage() {
         },
         {
           icon: "workspace_premium",
-          title: "Expert Instructor",
-          description: "DVSA-qualified, patient instructor.",
+          title: "Expert Trainer",
+          description: "DVSA-qualified, patient trainer.",
         },
         {
           icon: "directions_car",

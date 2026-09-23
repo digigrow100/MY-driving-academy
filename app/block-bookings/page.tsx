@@ -38,7 +38,7 @@ export default function BlockBookingsPage() {
           icon: "trending_up",
           title: "Progress Tracking",
           description:
-            "With a structured block, our instructors can effectively map and track your progress against the DVSA syllabus, ensuring comprehensive preparation for your test.",
+            "With a structured block, our trainers can effectively map and track your progress against the DVSA syllabus, ensuring comprehensive preparation for your test.",
           wide: true,
         },
         {

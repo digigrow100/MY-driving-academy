@@ -106,7 +106,7 @@ export default function Footer() {
             reserved.
           </p>
           <p className="text-xs text-on-primary-container/50">
-            10+ Years Experience · DVSA-Qualified Instructors · Leicester, UK
+            5+ Years Experience · DVSA-Qualified Trainers · Leicester, UK
           </p>
         </div>
       </div>
