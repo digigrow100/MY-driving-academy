@@ -10,6 +10,21 @@ import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 const linkClasses =
   "relative w-fit text-sm text-on-primary-container/75 transition-colors duration-200 hover:text-secondary-fixed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary-fixed rounded-sm after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-secondary-fixed after:transition-all after:duration-300 hover:after:w-full";
 
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/share/1M89GFpTa4/?mibextid=wwXIfr",
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/myda.uk?evlk=MWJwajllZGg0a2p5bA%3D%3D&utm_source=qr",
+  },
+  {
+    label: "TikTok",
+    href: "https://www.tiktok.com/@myda.uk?_r=1&_t=ZN-9BcwygjLcEp",
+  },
+];
+
 export default function Footer() {
   return (
     <footer className="w-full bg-primary-container mt-auto">
@@ -52,6 +67,15 @@ export default function Footer() {
                 WhatsApp us
               </a>
             </div>
+            <ul aria-label="Social media" className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+              {socialLinks.map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} target="_blank" rel="noopener noreferrer" className={linkClasses}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div>
