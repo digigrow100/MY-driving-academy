@@ -23,7 +23,7 @@ export default function FloatingContact() {
         title="Call us"
         className="w-14 h-14 rounded-full bg-red-600 text-white shadow-lg flex items-center justify-center transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
       >
-        <Phone className="w-6 w-6" aria-hidden="true" />
+        <Phone className="w-6 h-6" aria-hidden="true" />
       </a>
     </div>
   );
